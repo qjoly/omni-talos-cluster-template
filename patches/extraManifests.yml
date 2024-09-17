@@ -1,0 +1,5 @@
+cluster:
+  extraManifests: []
+    #   - https://www.example.com/manifest1.yaml
+    #   - https://www.example.com/manifest2.yaml
+

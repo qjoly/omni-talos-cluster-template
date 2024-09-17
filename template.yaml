@@ -1,0 +1,34 @@
+kind: Cluster
+name: my-cluster
+labels:
+  template: kubespan
+kubernetes:
+  version: v1.30.5
+talos:
+  version: v1.7.6
+features:
+  enableWorkloadProxy: true
+patches:
+  - name: kubespan-enabled
+    file: patches/kubespan.yml
+  - name: no-cni # we will install cilium in extraManifests
+    file: patches/cni.yml
+systemExtensions:
+  - siderolabs/qemu-guest-agent
+  - siderolabs/iscsi-tools
+  - siderolabs/util-linux-tools
+---
+kind: Workers
+name: workers
+labels:
+  type: worker
+machineClass:
+  name: cloud
+  size: 2
+---
+kind: ControlPlane
+labels:
+  type: control-plane
+machineClass:
+  name: cloud
+  size: 3
