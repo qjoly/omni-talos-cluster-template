@@ -1,5 +1,6 @@
 cluster:
-  extraManifests: []
-    #   - https://www.example.com/manifest1.yaml
-    #   - https://www.example.com/manifest2.yaml
+  extraManifests: 
+   - https://raw.githubusercontent.com/qjoly/omni-talos-cluster-template/main/manifests/install-cilium.yaml
+   - https://raw.githubusercontent.com/qjoly/omni-talos-cluster-template/main/manifests/L2Announcement.yaml
+   - https://raw.githubusercontent.com/qjoly/omni-talos-cluster-template/main/manifests/ip-pool.yml
 
