@@ -19,6 +19,8 @@ patches:
     file: patches/disable-kubeproxy.yml
   - name: install-cilium
     file: patches/extraManifests.yml
+  - name: metric-server
+    file: patches/metrics-server.yml
 systemExtensions:
   - siderolabs/qemu-guest-agent
   - siderolabs/iscsi-tools
