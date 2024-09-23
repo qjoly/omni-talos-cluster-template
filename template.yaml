@@ -1,5 +1,5 @@
 kind: Cluster
-name: my-cluster
+name: cuistops-gatewayapi
 labels:
   template: true
   cni: cilium
