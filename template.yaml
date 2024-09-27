@@ -1,13 +1,13 @@
 kind: Cluster
-name: cuistops-gatewayapi
+name: home
 labels:
   template: true
-  cni: cilium
+  cni: none
   kubespan: enabled
 kubernetes:
   version: v1.30.5
 talos:
-  version: v1.7.6
+  version: v1.8.0
 features:
   enableWorkloadProxy: true
 patches:
@@ -31,12 +31,12 @@ name: workers
 labels:
   type: worker
 machineClass:
-  name: cloud
-  size: 2
+  name: home
+  size: 1
 ---
 kind: ControlPlane
 labels:
   type: control-plane
 machineClass:
-  name: cloud
+  name: home 
   size: 3
