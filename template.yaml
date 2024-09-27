@@ -2,7 +2,7 @@ kind: Cluster
 name: my-cluster
 labels:
   template: true
-  cni: cilium
+  cni: none
   kubespan: enabled
 kubernetes:
   version: v1.30.5
