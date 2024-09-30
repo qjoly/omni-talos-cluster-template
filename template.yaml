@@ -7,7 +7,7 @@ labels:
 kubernetes:
   version: v1.30.5
 talos:
-  version: v1.8.0
+  version: v1.7.6
 features:
   enableWorkloadProxy: true
 patches:
