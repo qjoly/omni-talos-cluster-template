@@ -1,26 +1,9 @@
 kind: Cluster
-name: my-cluster
-labels:
-  template: true
-  cni: none
-  kubespan: enabled
+name: atelier-talos
 kubernetes:
-  version: v1.30.5
+  version: v1.30.1
 talos:
-  version: v1.7.6
-features:
-  enableWorkloadProxy: true
-patches:
-  - name: kubespan-enabled
-    file: patches/kubespan.yml
-  - name: no-cni # we will install cilium in extraManifests
-    file: patches/cni.yml
-  - name: disable-kubeproxy
-    file: patches/disable-kubeproxy.yml
-  - name: install-cilium
-    file: patches/extraManifests.yml
-  - name: metric-server
-    file: patches/metrics-server.yml
+  version: v1.8.1
 systemExtensions:
   - siderolabs/qemu-guest-agent
   - siderolabs/iscsi-tools
@@ -31,12 +14,12 @@ name: workers
 labels:
   type: worker
 machineClass:
-  name: cloud
-  size: 2
+  name: home
+  size: 1
 ---
 kind: ControlPlane
 labels:
   type: control-plane
 machineClass:
-  name: cloud
+  name: home
   size: 3
