@@ -1,13 +1,13 @@
 kind: Cluster
-name: my-cluster
+name: cuistops-kyverno
 labels:
   template: true
   cni: none
   kubespan: enabled
 kubernetes:
-  version: v1.30.5
+  version: v1.31.3
 talos:
-  version: v1.7.6
+  version: v1.8.3
 features:
   enableWorkloadProxy: true
 patches:
@@ -31,12 +31,12 @@ name: workers
 labels:
   type: worker
 machineClass:
-  name: cloud
+  name: arabica
   size: 2
 ---
 kind: ControlPlane
 labels:
   type: control-plane
 machineClass:
-  name: cloud
+  name: arabica
   size: 3
