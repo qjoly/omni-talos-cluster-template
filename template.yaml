@@ -5,12 +5,14 @@ labels:
   cni: none
   kubespan: enabled
 kubernetes:
-  version: v1.30.5
+  version: v1.31.4
 talos:
-  version: v1.8.2
+  version: v1.8.3
 features:
   enableWorkloadProxy: true
 patches:
+  - name: enable-workload-on-cp
+    file: patches/enable-workload-on-cp.yml
   - name: kubespan-enabled
     file: patches/kubespan.yml
   - name: no-cni # we will install cilium in extraManifests
